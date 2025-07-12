@@ -1,0 +1,14 @@
+{
+  "name": "mider-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/telegram/bot.js",
+  "scripts": {
+    "bot:run-tg": "node src/telegram/bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}
