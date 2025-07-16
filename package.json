@@ -2,13 +2,21 @@
   "name": "mider-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "src/telegram/bot.js",
+  "type": "commonjs",
+  "main": "src/telegram/bot.ts",
   "scripts": {
-    "bot:run-tg": "node src/telegram/bot.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bot:run-tg": "ts-node src/telegram/bot.ts"
   },
   "private": true,
   "dependencies": {
-    "node-telegram-bot-api": "^0.66.0"
+    "@tonejs/midi": "^2.0.28",
+    "@types/node": "^24.0.13",
+    "lamejs": "github:zhuker/lamejs",
+    "node-telegram-bot-api": "^0.66.0",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/node-telegram-bot-api": "^0.64.9",
+    "typescript": "^5.8.3"
   }
 }
