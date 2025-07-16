@@ -1,12 +1,15 @@
-
-import { token } from './token.json'
 import TelegramBot from "node-telegram-bot-api"
-import {midercodeToMp3Buffer} from "../utils";
-import {createHash} from "node:crypto";
+import {midercodeToMp3Buffer} from "../utils"
+import {createHash} from "node:crypto"
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+let token: string = process.env.TG_TOKEN || ''
 
 const bot = new TelegramBot(token, { polling: true, testEnvironment: false })
 
-const md5 = str => createHash('md5').update(str).digest('hex');
+const md5 = (str: string) => createHash('md5').update(str).digest('hex')
 
 const cmdRegex = new RegExp(`>(g|f|\\d+b)((;[-+b#]?[A-G](min|maj|major|minor)?)|(;\\d)|(;img)|(;pdf)|(;mscz)|(;sing(:[a-zA-Z-]{2,4})?(:[fm]?\\d+)?)|(;midi)|(;\\d{1,3}%)|(;/\\d+)|(;\\d+dB)|(;[↑↓]+)|(;\\d+(\\.\\d+)?x)|(;i=([a-zA-Z-]+|\\d+))|(;\\d/\\d))*>[\\S\\s]+`)
 

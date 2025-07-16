@@ -4,3 +4,4 @@ node_modules
 
 *token*.json
 *token*.properties
+.env*
