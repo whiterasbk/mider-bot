@@ -14,8 +14,10 @@ console.log('matching reg: ' + cmdRegex)
 
 bot.onText(cmdRegex, async(msg, match) => {
     if (match) {
-        await bot.sendVoice(msg.chat.id, midercodeToMp3Buffer(match[0]), {}, {
-            filename: md5(match[0]).slice(0, 7) + '.mp3',
+        let text = match[0]
+        console.log('received text: ' + text)
+        await bot.sendVoice(msg.chat.id, midercodeToMp3Buffer(text), {}, {
+            filename: md5(text).slice(0, 7) + '.mp3',
             contentType: 'audio/mpeg'
         })
     }
